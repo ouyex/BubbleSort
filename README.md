@@ -6,13 +6,16 @@ A basic C# console application for the bubble sort algorithm.
 - Sorted arrays are randomly generated between minimum and maximum values, which are defined by the user.
 - This program does NOT support manual arrays, only randomized ones.
 - Due to the bubble sort algorithm itself, higher arrays can take extremely long to calculate. Refer to the [Speed Tests](#sorting-speed-tests) before inputting custom values.
+- Exported files run through the "write_sort" and "write_unsort" commands are saved in the same directory as the program itself, as "sorted.txt" and "unsorted.txt" respectively.
+- "force_fetch" and "force_unfetch" commands are not required to run manually, commands that require the strings of the arrays are fectched automatically. They are simply there for debug purposes, or to simultaneously get both the sorted and unsorted array strings to prevent waiting later.
 
 ___
 
-### SORTING SPEED TESTS
-Sorting tests were ran on an Intel i7-8565U.
-Values can heavily vary depending on both CPU speed and how the unsorted array is generated.
-Use this only as a rough relative guide, not as real-world times.
+### Sorting Speed Tests
+- Sorting tests were ran on an Intel i7-8565U.
+- Values can heavily vary depending on both CPU speed and how the unsorted array is generated.
+- These tests were run in a debug build, actual times will sometimes be less than 50% of the listed times.
+- Use this only as a rough relative guide, not as real-world times.
 
 ```
  Sizes        Time           Passes
@@ -29,5 +32,6 @@ _______   _____________  ______________
 ```
 ___
 
-### KNOWN ISSUES
-Windows Notepad may switch to a different type of text encoding on some files, which can cause numbers to show up as foreign characters. An application like [Notepad++](https://notepad-plus-plus.org/downloads/) is strongly recommended for viewing output files.
+### Known Issues
+- Windows Notepad may switch to a different type of text encoding on some files, which can cause numbers to show up as foreign characters. An application like [Notepad++](https://notepad-plus-plus.org/downloads/) is strongly recommended for viewing output files.
+- There is not much sanitization in place for user input, so it is fairly easy to input unexpected values and crash the program. For now this program is small enough for it to be close to a non-issue.
