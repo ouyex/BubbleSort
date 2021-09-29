@@ -2,7 +2,7 @@
 A basic C# console application for the bubble sort algorithm.
 
 ## Download
-Download on the GitHub repository [here](https://github.com/LimitedLack/BubbleSort/blob/main/BubbleSort%20V1.exe).
+Download from the GitHub repository releases [here](https://github.com/LimitedLack/BubbleSort/releases/tag/Releases).
 
 ## Info
 - Size of sorted array is defined by the user.
