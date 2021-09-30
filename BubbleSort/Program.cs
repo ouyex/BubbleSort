@@ -33,9 +33,34 @@ namespace BubbleSort
 
             Console.Clear();
             Console.Title = "Bubble Sort";
-            Console.WriteLine("Please input array size:");
 
-            int inputLength = int.Parse(Console.ReadLine());
+            int inputLength = 0;
+
+            while (inputLength <= 1)
+            {
+                Console.WriteLine("Please input array size:");
+                
+                try
+                {
+                    inputLength = int.Parse(Console.ReadLine());
+
+                    if (inputLength <= 1)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Please input a size of at least 2.");
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Please only input numbers.");
+                }
+                catch (ArgumentNullException)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Please enter a number.");
+                }
+            }
 
             if (inputLength > 200000)
             {
@@ -214,7 +239,6 @@ namespace BubbleSort
 
             while (!isSorted)
             {
-
                 // Check if array is sorted
                 for (int i = 0; i < workingArray.Length - 1; i++)
                 {
@@ -233,7 +257,6 @@ namespace BubbleSort
                         isSorted = true;
                     }
                 }
-
 
                 if (watch.ElapsedMilliseconds - timeStart > millisecondsBetweenTitleUpdates)
                 {
@@ -294,15 +317,15 @@ namespace BubbleSort
             int timeBetweenTitleUpdates = 100;
             var timeStart = watch.ElapsedMilliseconds;
 
-            string returnString = "";
+            var returnString = new StringBuilder();
 
-            returnString += "{";
+            returnString.Append("{");
 
             Console.Clear();
 
             for (int i = 0; i < array.Length; i++)
             {
-                returnString += array[i];
+                returnString.Append(array[i]);
 
                 if (watch.ElapsedMilliseconds - timeStart > timeBetweenTitleUpdates)
                 {
@@ -322,17 +345,17 @@ namespace BubbleSort
                 }
 
                 if (i != array.Length - 1)
-                    returnString += ",";
+                    returnString.Append(", ");
             }
 
-            returnString += "}";
+            returnString.Append("}");
 
             if (usingSortedArray)
-                sortedArrayString = returnString;
+                sortedArrayString = returnString.ToString();
             else if (!usingSortedArray)
-                unsortedArrayString = returnString;
+                unsortedArrayString = returnString.ToString();
 
-            return returnString;
+            return returnString.ToString();
         }
 
         static void FillArray(ref int[] array, int min, int max)
