@@ -37,4 +37,3 @@ ___
 
 ### Known Issues
 - Windows Notepad may switch to a different type of text encoding on some files, which can cause numbers to show up as foreign characters. An application like [Notepad++](https://notepad-plus-plus.org/downloads/) is strongly recommended for viewing output files.
-- There is not much sanitization in place for user input, so it is fairly easy to input unexpected values and crash the program. For now this program is small enough for it to be close to a non-issue.
