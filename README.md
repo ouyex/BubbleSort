@@ -2,7 +2,7 @@
 A basic C# console application for the bubble sort algorithm.
 
 ## Download
-Download from the GitHub repository releases [here](https://github.com/Ouyex/BubbleSort/releases/tag/Releases).
+Download from the GitHub repository releases [here](https://github.com/ouyex/BubbleSort/releases/tag/Releases).
 
 ## Info
 - Size of sorted array is defined by the user.
